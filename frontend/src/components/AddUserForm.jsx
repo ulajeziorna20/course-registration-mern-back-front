@@ -7,6 +7,31 @@ import picture from './img/picture.svg';
 const AddUserForm = (props) => {
 
 
+
+
+  const add = async () => {
+    const message = document.getElementById('name').value;
+    console.log(message)
+
+    if (message === '') {
+      let errors = document.getElementById('val');
+      let liError = document.createElement('p');
+      liError.innerText = 'Wpisz Imię';
+      errors.appendChild(liError);
+
+    } else {
+
+      const post = { name: props.formData.name, city: props.formData.city, course: props.formData.course }
+      await axios.post('http://localhost:8080/user/addUser/', post)
+      document.getElementById('name').value = "";
+      document.getElementById('cityAdd').value = "----- Wybierz miasto-----";
+      document.getElementById('courseAdd').value = "------ Wybierz kurs------";
+      props.getUsers();
+
+
+    }
+  }
+
   return (
     <div className="containerForm">
 
@@ -63,7 +88,7 @@ const AddUserForm = (props) => {
               <div className="row">
                 <div className="col-lg-12">
                   <Button type="submit" variant="outline-success" className="btn m-3"
-                    
+                    onClick={add}
                   >Dodaj</Button>
                 </div>
 

@@ -1,6 +1,6 @@
 import './App.css';
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import AddFormUser from './components/AddFormUser';
 
 
@@ -29,6 +29,15 @@ function App(props) {
     setUsers(users.data);
 
   }
+
+
+  useEffect(() => {
+    getUsers();
+    // eslint-disable-next-line
+  }, [])
+
+
+
   return (
     <div className="App">
       <AddFormUser
