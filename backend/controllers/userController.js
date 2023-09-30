@@ -46,4 +46,85 @@ module.exports = {
       })
   },
 
+  filtrNameUp: (req, res) => {
+    //console.log(req.query)
+    CourseModel.find(req.query).sort({ "name": 1 })
+      .lean()
+      .then((filtrNameUp) => {
+        res.json(filtrNameUp)
+      })
+      .catch((err) => {
+        res.send("Błąd pobrania użykowników");
+      })
+  },
+
+
+  filtrNameDown: (req, res) => {
+    //console.log(req.query)
+    CourseModel.find(req.query).sort({ "name": -1 })
+      .lean()
+      .then((filtrNameDown) => {
+        res.json(filtrNameDown)
+      })
+      .catch((err) => {
+        res.send("Błąd pobrania użykowników");
+      })
+  },
+
+
+  filtrCityUp: (req, res) => {
+    //console.log(req.query)
+    CourseModel.find(req.query).sort({ "city": 1 })
+      .lean()
+      .then((filtrCityUp) => {
+        res.json(filtrCityUp)
+      })
+      .catch((err) => {
+        res.send("Błąd pobrania użykowników");
+      })
+
+  },
+
+
+
+  filtrCityDown: (req, res) => {
+    //console.log(req.query)
+    CourseModel.find(req.query).sort({ "city": -1 })
+      .lean()
+      .then((filtrCityDown) => {
+        res.json(filtrCityDown)
+      })
+      .catch((err) => {
+        res.send("Błąd pobrania użykowników");
+      })
+
+  },
+
+
+  filtrCourseUp: (req, res) => {
+    //console.log(req.query)
+    CourseModel.find(req.query).sort({ "course": 1 })
+      .lean()
+      .then((filtrCourseUp) => {
+        res.json(filtrCourseUp)
+      })
+      .catch((err) => {
+        res.send("Błąd pobrania użykowników");
+      })
+  },
+
+
+  filtrCourseDown: (req, res) => {
+    //console.log(req.query)
+    CourseModel.find(req.query).sort({ "course": -1 })
+      .lean()
+      .then((filtrCourseDown) => {
+        res.json(filtrCourseDown)
+      })
+      .catch((err) => {
+        res.send("Błąd pobrania użykowników");
+      })
+  },
+
+
 }
