@@ -36,5 +36,14 @@ module.exports = {
       )
   },
 
+  update: (req, res) => {
+    CourseModel.findByIdAndUpdate(req.params.id, req.body).then((updateUser) => {
+      res.json(updateUser);
+
+    })
+      .catch((err) => {
+        res.send("Błąd aktualizacji");
+      })
+  },
 
 }
