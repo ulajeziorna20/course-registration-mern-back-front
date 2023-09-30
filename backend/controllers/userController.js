@@ -18,4 +18,11 @@ module.exports = {
       })
   },
 
+  create: (req, res) => {
+    let newUser = new CourseModel(req.body);
+    newUser.save();
+    res.json(newUser)
+  },
+
+
 }
