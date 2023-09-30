@@ -25,4 +25,16 @@ module.exports = {
   },
 
 
+  delete: (req, res) => {
+    CourseModel.findByIdAndDelete(req.params.id).then(() => {
+
+      res.json({ deleted: true })
+    })
+      .catch((err) => {
+        res.send("Błąd usuwania uzytkownika");
+      }
+      )
+  },
+
+
 }

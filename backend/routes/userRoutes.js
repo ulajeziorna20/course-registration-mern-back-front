@@ -7,6 +7,6 @@ const viewController = require('../controllers/userController');
 
 router.get('/', viewController.allUsers); 
 router.post('/addUser', viewController.create);
-
+router.delete('/delete/:id', viewController.delete);
 
 module.exports = router; 
