@@ -31,6 +31,46 @@ function App(props) {
   }
 
 
+
+  const sortNameUp = (async () => {
+    const res = await axios.get('http://localhost:8080/user/sortUp')
+    setUsers(res.data)
+
+
+  })
+  const sortNameDown = (async () => {
+    const res = await axios.get('http://localhost:8000/user/sortDown')
+    setUsers(res.data)
+
+  })
+
+
+  const sortCityUp = (async () => {
+    const res = await axios.get('http://localhost:8000/user/sortCityUp')
+    setUsers(res.data)
+
+
+  })
+  const sortCityDown = (async () => {
+    const res = await axios.get('http://localhost:8000/user/sortCityDown')
+    setUsers(res.data)
+
+  })
+
+  const sortCourseUp = (async () => {
+    const res = await axios.get('http://localhost:8000/user/sortCourseUp')
+    setUsers(res.data)
+
+
+  })
+  const sortCourseDown = (async () => {
+    const res = await axios.get('http://localhost:8000/user/sortCourseDown')
+    setUsers(res.data)
+
+  })
+
+
+
   useEffect(() => {
     getUsers();
     // eslint-disable-next-line
@@ -49,6 +89,9 @@ function App(props) {
       <UsersTable
         getUsers={getUsers}
         dataUsers={users}
+        sortNameUp={sortNameUp} sortNameDown={sortNameDown}
+        sortCityUp={sortCityUp} sortCityDown={sortCityDown}
+        sortCourseUp={sortCourseUp} sortCourseDown={sortCourseDown}
       />
     </div>
   );

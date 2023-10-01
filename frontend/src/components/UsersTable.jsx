@@ -79,16 +79,16 @@ const UsersTable = (props) => {
           <thead>
             <tr>
               <th scope="col">IMIĘ NAZWISKO
-                <i className="fa-solid fa-arrow-up"></i>
-                <i className="fa-solid fa-arrow-down"></i>
+                <i onClick={props.sortNameUp} className="fa-solid fa-arrow-up"></i>
+                <i onClick={props.sortNameDown} className="fa-solid fa-arrow-down"></i>
               </th>
               <th scope="col">MIASTO
-                <i className="fa-solid fa-arrow-up"></i>
-                <i className="fa-solid fa-arrow-down"></i>
+                <i onClick={props.sortCityUp} className="fa-solid fa-arrow-up"></i>
+                <i onClick={props.sortCityDown} className="fa-solid fa-arrow-down"></i>
               </th>
               <th scope="col">KURS
-                <i className="fa-solid fa-arrow-up"></i>
-                <i className="fa-solid fa-arrow-down"></i>
+                <i onClick={props.sortCourseUp} className="fa-solid fa-arrow-up"></i>
+                <i onClick={props.sortCourseDown} className="fa-solid fa-arrow-down"></i>
               </th>
               <th scope="col">Usuń</th>
               <th scope="col">Edytuj</th>
