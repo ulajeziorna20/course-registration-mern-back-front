@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Container, Modal, Form, Table } from 'react-bootstrap';
 import axios from 'axios';
+import ModalDelete from './modals/ModalDelete';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee, faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons'
+
 
 
 const UsersTable = (props) => {
@@ -54,22 +59,22 @@ const UsersTable = (props) => {
 
   return (
     <div className="containerTable">
+      {/* <FontAwesomeIcon icon={faCoffee} /> */}
       <Container>
         <Table variant="dark" className="tableSearch">
           <thead>
-            <tr>
+            <tr className='trHead'>
               <th className="thSearch">
-                <div className="searchText col-lg-4">Wyszukaj : </div>
-                <div className="inputDiv  col-lg-8">
-                  <form id="formSearch" className="form-reset">
-                    <input type="text" className="input-search"
-                      name="inputSearch"
-                      id="inputSearch"
-                      onChange={findUser}
-                    />
-                    <Button type="reset" variant="outline-success" className="btnReset" onClick={clear}>Reset</Button>
-                  </form>
-                </div>
+                <form id="formSearch" className="form-reset">
+                  <label className="searchText col-lg-4">Wyszukaj : </label>
+                  <input type="text" className="input-search"
+                    name="inputSearch"
+                    id="inputSearch"
+                    onChange={findUser}
+                  />
+                  <Button type="reset" variant="outline-success" className="btnReset" onClick={clear}>Reset</Button>
+                </form>
+
               </th>
             </tr>
           </thead>
@@ -77,21 +82,26 @@ const UsersTable = (props) => {
 
         <Table variant="dark" className="tableUs  table-hover align-middle">
           <thead>
-            <tr>
-              <th scope="col">IMIĘ NAZWISKO
-                <i onClick={props.sortNameUp} className="fa-solid fa-arrow-up"></i>
-                <i onClick={props.sortNameDown} className="fa-solid fa-arrow-down"></i>
+            <tr className='userTableHeadRow'>
+              <th scope="col">
+                <p>IMIĘ NAZWISKO</p>
+
+
+                <FontAwesomeIcon onClick={props.sortNameUp} icon={faArrowUp} className='fa-arrow-up' />
+                <FontAwesomeIcon onClick={props.sortNameDown} icon={faArrowDown} className='fa-arrow-down' />
               </th>
-              <th scope="col">MIASTO
-                <i onClick={props.sortCityUp} className="fa-solid fa-arrow-up"></i>
-                <i onClick={props.sortCityDown} className="fa-solid fa-arrow-down"></i>
+              <th scope="col">
+                <p>MIASTO</p>
+                <FontAwesomeIcon onClick={props.sortCityUp} icon={faArrowUp} className='fa-arrow-up' />
+                <FontAwesomeIcon onClick={props.sortCityDown} icon={faArrowDown} className='fa-arrow-down' />
               </th>
-              <th scope="col">KURS
-                <i onClick={props.sortCourseUp} className="fa-solid fa-arrow-up"></i>
-                <i onClick={props.sortCourseDown} className="fa-solid fa-arrow-down"></i>
+              <th scope="col" className='courseHead'>
+                <p>KURS</p>
+                <FontAwesomeIcon onClick={props.sortCourseUp} icon={faArrowUp} className='fa-arrow-up' />
+                <FontAwesomeIcon onClick={props.sortCourseDown} icon={faArrowDown} className='fa-arrow-down' />
               </th>
-              <th scope="col">Usuń</th>
-              <th scope="col">Edytuj</th>
+              <th scope="col" className='deleteOption'>Usuń</th>
+              <th scope="col" className='editOption'>Edytuj</th>
             </tr>
           </thead>
           <tbody>
@@ -103,10 +113,10 @@ const UsersTable = (props) => {
             }).map((user, index) => (
               <tr key={index} >
                 <td className="marg m-3" onClick={() => handleShow(user)}>{user.name}</td>
-                <td onClick={() => handleShow(user)}>{user.city}</td>
+                <td onClick={() => handleShow(user)} className='cityTd'>{user.city}</td>
                 <td onClick={() => handleShow(user)}>{user.course}</td>
                 <td>
-                  {/* tu bedzie usuwanie  */}
+                  <ModalDelete post={user} getUsers={props.getUsers} />
                 </td>
                 <td><Button variant="outline-warning" onClick={() => handleShow(user)}>Edytuj</Button> </td>
               </tr>
@@ -118,7 +128,7 @@ const UsersTable = (props) => {
       </ Container>
 
 
-      <Modal show={show} onHide={handleClose}   >
+      <Modal show={show} onHide={handleClose} className='modal-body'  >
         <Modal.Header closeButton className="modalHeaderColor">
           <Modal.Title>Edycja uczestnika</Modal.Title>
         </Modal.Header>

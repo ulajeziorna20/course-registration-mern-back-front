@@ -5,11 +5,21 @@ body {
 
 .App-logo {
   width: 80%;
-  text-align: right;
+}
+
+
+.row {
+  display: flex;
+  justify-content: space-around;
 }
 
 .col {
+  flex-basis: 49%;
   text-align: center;
+}
+
+.formElement {
+  width: 90%;
 }
 
 ul {
@@ -20,15 +30,18 @@ ul {
 .App {
   background-color: #282c34;
   min-height: 100vh;
+
+}
+
+.applicationBox {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   font-family: Poppins;
-  font-size: calc(6px + 1.5vmin);
+  font-size: calc(5px + 1.5vmin);
   color: white;
   padding-top: 10px;
   align-content: center;
-
 }
 
 input.form-control,
@@ -36,10 +49,8 @@ select.form-control {
   text-align: center;
   border: 3px solid green;
   font-size: 1em;
-}
-
-.input {
-  width: 100%;
+  width: 90%;
+  height: 30px;
 }
 
 .modalMain {
@@ -50,8 +61,8 @@ select.form-control {
   background-color: #81BECE;
   font-weight: 700;
   min-height: 10em;
-  border-left: 2px solid white;
-  border-right: 2px solid white;
+  border-left: 4px solid white;
+  border-right: 4px solid white;
 }
 
 .modal-header {
@@ -72,11 +83,9 @@ select.form-control {
 
 .container {
   padding-top: 10px;
-  border: 0px solid yellow;
   display: block;
+  width: 100%;
 }
-
-
 
 
 
@@ -86,109 +95,101 @@ select.form-control {
   padding-top: 2px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  border: 2px solid gray;
+  border: 4px solid gray;
+  height: 400px;
 
 }
-
 
 
 .containerTable {
   background-color: #282c34;
   width: auto;
-  display: flex;
   padding-top: 5px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  border: 2px solid grey;
+  border: 4px solid grey;
   margin-top: 10px;
 }
 
-.form-control {
-  margin-left: 0px;
-}
-
 .form-label {
-  margin-left: 0px;
-  margin-top: 20px;
+  display: block;
+  margin: 20px auto 10px auto;
+  font-size: large;
+
 }
 
 .fa-arrow-up {
   color: green;
   size: 0.9em;
   cursor: pointer;
-  padding-left: 10px;
+  padding-left: 5px;
+
 }
 
 .fa-arrow-down {
   color: red;
   size: 0.9em;
   cursor: pointer;
-  padding-left: 10px;
+  padding-left: 5px;
 }
 
-.inputDiv {
-  width: 90% !important;
-  text-transform: lowercase;
+.cityTd {
+  min-width: 100px;
+}
+
+.tableSearch {
+  width: 100%;
+}
+
+#formSearch {
+  margin: 10px 20px;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 20px;
+  border: 3px solid gray;
 
 }
 
 .searchText {
-  justify-content: flex-end;
-  align-items: center;
-  display: flex;
-  padding-right: 10px;
-  width: 100%;
-  font-size: 0.8em;
-
-}
-
-.btnReset {
-  margin-left: 10px;
+  line-height: 60px;
+  margin-right: 10px;
 }
 
 .input-search {
-  text-align: center;
-  border: 3px solid green;
-  font-size: 0.9em;
-  border-radius: 5px;
-  padding: 5px;
-  width: 100%;
-
+  height: 30px;
+  margin-top: 12px;
 }
 
-.tableSearch {
-  display: flex;
-  text-align: end;
-  border: 3px solid red;
-  width: 100%;
-}
-
-.thSearch {
-  display: flex;
-  font-weight: normal;
-  min-width: 600px;
-
-}
-
-.form-reset {
-  width: 100%;
-  display: flex;
-}
-
-
-
-.btn {
+.btnReset {
   text-transform: uppercase;
   padding: 5px 10px 5px 10px;
-
+  margin-left: 15px;
+  height: 30px;
 }
 
-p,
-.red {
-  color: red;
-  font-size: 0.8em;
-  max-width: 80%;
+.tableUs {
+  width: 90%;
+  margin: auto;
+}
 
+.tableUs thead {
+  height: 50px;
+}
+
+.btn-outline-success {
+  background-color: rgb(97, 199, 97);
+  border-radius: 10px;
+  width: 80px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  padding: 5px 10px 5px 10px;
+}
+
+.userTableHeadRow p {
+  display: inline-block;
+  margin: 5px 0 5px 0;
+  height: 30px;
 }
 
 .green {
@@ -197,6 +198,31 @@ p,
   max-width: 80%;
 }
 
-td {
+tbody td {
+  border: 1px solid white;
   cursor: pointer;
+  padding: 5px;
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+
+  .row {
+    flex-direction: column;
+  }
+
+  .userTableHeadRow {
+    height: 70px;
+  }
+
+  .containerForm {
+    height: fit-content;
+  }
+
+  .userTableHeadRow p {
+    display: block;
+  }
+
 }

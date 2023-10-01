@@ -33,7 +33,7 @@ function App(props) {
 
 
   const sortNameUp = (async () => {
-    const res = await axios.get('http://localhost:8080/user/sortUp')
+    const res = await axios.get('http://localhost:8000/user/sortUp')
     setUsers(res.data)
 
 
@@ -80,20 +80,25 @@ function App(props) {
 
   return (
     <div className="App">
-      <AddUserForm
-        getUsers={getUsers}
-        getValue={getValue}
-        formData={formData}
-      />
 
-      <UsersTable
-        getUsers={getUsers}
-        dataUsers={users}
-        sortNameUp={sortNameUp} sortNameDown={sortNameDown}
-        sortCityUp={sortCityUp} sortCityDown={sortCityDown}
-        sortCourseUp={sortCourseUp} sortCourseDown={sortCourseDown}
-      />
-    </div>
+
+      <div className="applicationBox">
+        <AddUserForm
+          getUsers={getUsers}
+          getValue={getValue}
+          formData={formData}
+        />
+
+        <UsersTable
+          getUsers={getUsers}
+          dataUsers={users}
+          sortNameUp={sortNameUp} sortNameDown={sortNameDown}
+          sortCityUp={sortCityUp} sortCityDown={sortCityDown}
+          sortCourseUp={sortCourseUp} sortCourseDown={sortCourseDown}
+        />
+
+      </div>
+    </div >
   );
 }
 
