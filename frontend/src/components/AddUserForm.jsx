@@ -22,7 +22,7 @@ const AddUserForm = (props) => {
     } else {
 
       const post = { name: props.formData.name, city: props.formData.city, course: props.formData.course }
-      await axios.post('http://localhost:8080/user/addUser/', post)
+      await axios.post('http://localhost:8000/user/addUser/', post)
       document.getElementById('name').value = "";
       document.getElementById('cityAdd').value = "----- Wybierz miasto-----";
       document.getElementById('courseAdd').value = "------ Wybierz kurs------";
@@ -100,6 +100,9 @@ const AddUserForm = (props) => {
           </div>
         </form>
       </Container>
+
+
+      
     </div>
   )
 }

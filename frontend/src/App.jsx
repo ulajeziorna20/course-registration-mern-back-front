@@ -1,9 +1,9 @@
 import './App.css';
+import React from 'react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import AddFormUser from './components/AddFormUser';
-
-
+import AddUserForm from './components/AddUserForm';
+import UsersTable from './components/UsersTable';
 
 function App(props) {
   const [users, setUsers] = useState([])
@@ -25,7 +25,7 @@ function App(props) {
 
 
   const getUsers = async () => {
-    const users = await axios.get('http://localhost:8080/user/');
+    const users = await axios.get('http://localhost:8000/user/');
     setUsers(users.data);
 
   }
@@ -40,10 +40,15 @@ function App(props) {
 
   return (
     <div className="App">
-      <AddFormUser
+      <AddUserForm
         getUsers={getUsers}
         getValue={getValue}
         formData={formData}
+      />
+
+      <UsersTable
+        getUsers={getUsers}
+        dataUsers={users}
       />
     </div>
   );

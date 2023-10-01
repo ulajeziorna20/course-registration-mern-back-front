@@ -1,38 +1,202 @@
-.App {
+body {
+  background-color: #282c34;
+}
+
+
+.App-logo {
+  width: 80%;
+  text-align: right;
+}
+
+.col {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ul {
+  list-style-type: none;
+  margin-left: 25px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+.App {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-wrap: wrap;
+  font-family: Poppins;
+  font-size: calc(6px + 1.5vmin);
   color: white;
+  padding-top: 10px;
+  align-content: center;
+
 }
 
-.App-link {
-  color: #61dafb;
+input.form-control,
+select.form-control {
+  text-align: center;
+  border: 3px solid green;
+  font-size: 1em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input {
+  width: 100%;
+}
+
+.modalMain {
+  border: 0px solid red;
+}
+
+.modal-body {
+  background-color: #81BECE;
+  font-weight: 700;
+  min-height: 10em;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+}
+
+.modal-header {
+  background-color: #282c34;
+  border: 2px solid white;
+  color: white
+}
+
+.modal-footer {
+  padding: 10px;
+  background-color: #282c34 !important;
+  border: 2px solid white;
+}
+
+.modalBackground {
+  background-color: #282c34;
+}
+
+.container {
+  padding-top: 10px;
+  border: 0px solid yellow;
+  display: block;
+}
+
+
+
+
+
+.containerForm {
+  background-color: #282c34;
+  width: auto;
+  padding-top: 2px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 2px solid gray;
+
+}
+
+
+
+.containerTable {
+  background-color: #282c34;
+  width: auto;
+  display: flex;
+  padding-top: 5px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 2px solid grey;
+  margin-top: 10px;
+}
+
+.form-control {
+  margin-left: 0px;
+}
+
+.form-label {
+  margin-left: 0px;
+  margin-top: 20px;
+}
+
+.fa-arrow-up {
+  color: green;
+  size: 0.9em;
+  cursor: pointer;
+  padding-left: 10px;
+}
+
+.fa-arrow-down {
+  color: red;
+  size: 0.9em;
+  cursor: pointer;
+  padding-left: 10px;
+}
+
+.inputDiv {
+  width: 90% !important;
+  text-transform: lowercase;
+
+}
+
+.searchText {
+  justify-content: flex-end;
+  align-items: center;
+  display: flex;
+  padding-right: 10px;
+  width: 100%;
+  font-size: 0.8em;
+
+}
+
+.btnReset {
+  margin-left: 10px;
+}
+
+.input-search {
+  text-align: center;
+  border: 3px solid green;
+  font-size: 0.9em;
+  border-radius: 5px;
+  padding: 5px;
+  width: 100%;
+
+}
+
+.tableSearch {
+  display: flex;
+  text-align: end;
+  border: 3px solid red;
+  width: 100%;
+}
+
+.thSearch {
+  display: flex;
+  font-weight: normal;
+  min-width: 600px;
+
+}
+
+.form-reset {
+  width: 100%;
+  display: flex;
+}
+
+
+
+.btn {
+  text-transform: uppercase;
+  padding: 5px 10px 5px 10px;
+
+}
+
+p,
+.red {
+  color: red;
+  font-size: 0.8em;
+  max-width: 80%;
+
+}
+
+.green {
+  color: green;
+  font-size: 0.8em;
+  max-width: 80%;
+}
+
+td {
+  cursor: pointer;
 }
